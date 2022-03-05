@@ -2,8 +2,6 @@ from PyQt5.QtWidgets import QApplication,QWidget,QLabel
 from PyQt5.QtWidgets import QPushButton,QRadioButton,QComboBox,QLabel
 from PyQt5.QtGui import QFont
 import sys
-import random
-import time
 app=QApplication(sys.argv)
 
 class Window(QWidget):
