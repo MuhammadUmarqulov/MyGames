@@ -2,6 +2,8 @@ from PyQt5.QtWidgets import QApplication,QWidget,QLabel
 from PyQt5.QtWidgets import QPushButton,QRadioButton,QComboBox,QLabel
 from PyQt5.QtGui import QFont
 import sys
+import random
+import time
 app=QApplication(sys.argv)
 
 class Window(QWidget):
@@ -54,6 +56,7 @@ class Window(QWidget):
         self.words = QLabel("O's turn",self)
         self.words.setGeometry(125,340,120,20)
         self.words.setFont(QFont("Times",15))
+        self.draw = 0
                                
     def B1(self):
         self.k+=1
@@ -137,10 +140,12 @@ class Window(QWidget):
             self.font(self.words)
             self.words.setGeometry(50,50,270,80)
             self.b1.hide();self.b2.hide();self.b3.hide();self.b4.hide();self.b5.hide();self.b6.hide();self.b7.hide();self.b8.hide();self.b9.hide()
-            
-        
-        
-            
+        else:
+            self.draw+=1
+        if self.draw == 9:
+            self.words.setText("Draw!")
+            self.font(self.words)
+            self.words.setGeometry(90,50,270,80)            
 oyna=Window()
 oyna.show()
 sys.exit(app.exec_())
